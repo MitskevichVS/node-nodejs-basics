@@ -15,7 +15,11 @@ const writeNewFile = (pathWithName, fileContent) => {
 
 const readFileInDir = (filesDirectory) => {
     return new Promise((resolve, reject) => {
-        return fs.readdir(filesDirectory, (err, filenames) => err != null ? reject(err) : resolve(filenames))
+        return fs.readdir(filesDirectory, (err, filenames) => {
+            if (err) {
+                reject(err);
+            } else resolve(filenames);
+        })
     })
 }
 
