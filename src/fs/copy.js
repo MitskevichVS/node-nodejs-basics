@@ -18,6 +18,8 @@ const copy = async () => {
     try {
         if (!fs.existsSync(newFolderDirectory)) {
             copyFolder(filesDirectory, newFolderDirectory)
+        } else {
+            handleError();
         }
       } catch (err) {
         handleError();
