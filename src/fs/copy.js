@@ -16,7 +16,6 @@ const copy = async () => {
     const newFolderDirectory = path.join(currentScriptDirectory, folderName);
 
     try {
-        console.log(fs.existsSync(newFolderDirectory));
         if (!fs.existsSync(newFolderDirectory)) {
             copyFolder(filesDirectory, newFolderDirectory)
         }
